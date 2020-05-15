@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: foo
-        run: echo "::set-output name=bar::true"
+        run: echo "::set-output name=exists::true"
       
-      - run: echo ${{ steps.foo.outputs.bar }}
+      - run: echo ${{ steps.foo.outputs.exists }}
 
-      - run: echo "bar is true"
-        if: ${{ steps.foo.outputs.bar }}
+      - run: echo "exists is true"
+        if: ${{ steps.foo.outputs.exists }}
