@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: foo
-        run: echo "::set-output bar::true"
+        run: echo "::set-output name=bar::true"
 
       - run: echo "bar is true"
         if: ${{ steps.foo.bar }}
