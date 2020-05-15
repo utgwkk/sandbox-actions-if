@@ -11,6 +11,7 @@ jobs:
         run: |
           echo hello > hello.txt
           false
+        continue-on-error: true
 
       - id: foo
         run: |
