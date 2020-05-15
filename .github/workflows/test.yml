@@ -18,7 +18,7 @@ jobs:
           if [ -e 'hello.txt' ]; then
             echo "::set-output name=exists::true"
           fi
-        if: always()
+        if: failure()
 
       - name: check steps.foo.outputs.exists
         run: echo ${{ steps.foo.outputs.exists }}
