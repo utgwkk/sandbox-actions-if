@@ -9,6 +9,8 @@ jobs:
     steps:
       - id: foo
         run: echo "::set-output name=bar::true"
+      
+      - run: echo ${{ steps.foo.bar }}
 
       - run: echo "bar is true"
         if: ${{ steps.foo.bar }}
