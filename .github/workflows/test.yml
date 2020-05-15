@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: do_test
-        run: false
+        run: |
+          echo hello > hello.txt
+          false
 
       - id: foo
         run: |
@@ -19,5 +21,8 @@ jobs:
         run: echo ${{ steps.foo.outputs.exists }}
         if: always()
 
-      - run: echo ${{ steps.foo.outputs.exists }} if steps.foo.outputs.exists
+      - uses: actions/upload-artifact@v2
+        with:
+          name: hello
+          path: hello.txt
         if: steps.foo.outputs.exists
