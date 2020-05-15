@@ -7,9 +7,12 @@ jobs:
     name: annotate
     runs-on: ubuntu-latest
     steps:
+      - run: false
+
       - id: foo
         run: |
           echo "::set-output name=exists::true"
+        if: failure()
       
       - run: echo ${{ steps.foo.outputs.exists }}
         if: always()
