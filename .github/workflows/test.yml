@@ -10,7 +10,7 @@ jobs:
       - id: do_test
         run: |
           echo hello > hello.txt
-          false
+          true
 
       - id: foo
         run: |
