@@ -16,7 +16,7 @@ jobs:
 
       - run: echo ${{ steps.foo.outputs.exists }}
         if: always()
-        continue-on-error: true
 
       - run: echo ${{ steps.foo.outputs.exists }} if steps.foo.outputs.exists
         if: steps.foo.outputs.exists
+        continue-on-error: true
