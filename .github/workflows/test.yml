@@ -17,5 +17,5 @@ jobs:
       - run: echo ${{ steps.foo.outputs.exists }}
         if: always()
 
-      - run: echo ${{ steps.foo.outputs.exists }}
+      - run: echo ${{ steps.foo.outputs.exists }} if steps.foo.outputs.exists
         if: steps.foo.outputs.exists
