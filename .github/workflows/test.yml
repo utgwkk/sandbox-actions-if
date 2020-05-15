@@ -5,7 +5,7 @@ on:
 jobs:
   test:
     name: annotate
-    runs-on: ubunu-latest
+    runs-on: ubuntu-latest
     steps:
       - id: foo
         run: echo "::set-output bar::true"
