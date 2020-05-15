@@ -6,8 +6,7 @@ jobs:
   test:
     name: annotate
     runs-on: ubuntu-latest
-    strategy:
-      continue-on-error: true
+    continue-on-error: true
     steps:
       - run: false
 
