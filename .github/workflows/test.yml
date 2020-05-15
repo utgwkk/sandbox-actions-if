@@ -4,6 +4,7 @@ on:
 
 jobs:
   test:
+    name: annotate
     runs-on: ubunu-latest
     steps:
       - id: foo
