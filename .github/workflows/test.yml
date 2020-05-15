@@ -13,7 +13,7 @@ jobs:
         run: |
           echo "::set-output name=exists::true"
         if: failure()
-      
+
       - run: echo ${{ steps.foo.outputs.exists }}
         if: always()
 
