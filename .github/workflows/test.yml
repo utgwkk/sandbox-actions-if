@@ -1,0 +1,13 @@
+name: test
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubunu-latest
+    steps:
+      - id: foo
+        run: echo "::set-output bar::true"
+
+      - run: echo "bar is true"
+        if: ${{ steps.foo.bar }}
