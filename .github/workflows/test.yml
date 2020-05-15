@@ -14,7 +14,9 @@ jobs:
 
       - id: foo
         run: |
-          echo "::set-output name=exists::true"
+          if [ -e 'hello.txt' ]; then
+            echo "::set-output name=exists::true"
+          fi
         if: failure()
 
       - name: check steps.foo.outputs.exists
