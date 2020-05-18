@@ -27,4 +27,4 @@ jobs:
         with:
           name: hello
           path: hello.txt
-        if: steps.foo.outputs.exists
+        if: failure() && steps.foo.outputs.exists == 'true'
