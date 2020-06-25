@@ -3,7 +3,7 @@ name: Condition test
 on:
   pull_request:
     branches-ignore:
-      - ignored-branch
+      - master
 
 jobs:
   invoke:
