@@ -1,0 +1,12 @@
+name: Condition test
+
+on:
+  pull_request:
+    branches-ignore:
+      - ignored-branch
+
+jobs:
+  invoke:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo YO
