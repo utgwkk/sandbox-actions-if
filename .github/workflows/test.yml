@@ -7,4 +7,4 @@ jobs:
     name: annotate
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'github.event.action=${{ github.event.action }}'
+      - run: echo '${{ github.event }}'
