@@ -5,8 +5,13 @@ on:
 jobs:
   test:
     name: annotate
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/checkout@v2
+      - run: python -c 'from __future__ import print_function; import os; print(os.environ["GITHUB_WORKSPACE"])'
       - id: do_test
         run: |
           echo hello > hello.txt
