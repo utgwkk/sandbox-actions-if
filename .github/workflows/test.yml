@@ -5,26 +5,7 @@ on:
 jobs:
   test:
     name: annotate
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - id: do_test
-        run: |
-          echo hello > hello.txt
-          false
-
-      - id: foo
-        run: |
-          if [ -e 'hello.txt' ]; then
-            echo "::set-output name=exists::true"
-          fi
-        if: failure()
-
-      - name: check steps.foo.outputs.exists
-        run: echo ${{ steps.foo.outputs.exists }}
-        if: always()
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: hello
-          path: hello.txt
-        if: failure() && steps.foo.outputs.exists == 'true'
+      - run: echo $GITHUB_WORKSPACE
+      - run: pwd
