@@ -8,5 +8,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - run: echo ${{ env.workspace }}
       - run: echo $GITHUB_WORKSPACE
       - run: pwd
