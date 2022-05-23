@@ -7,7 +7,7 @@ jobs:
     name: annotate
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ toJSON(github.event.push) }}
+      - run: echo ${{ toJSON(github.event) }}
       - id: do_test
         run: |
           echo hello > hello.txt
