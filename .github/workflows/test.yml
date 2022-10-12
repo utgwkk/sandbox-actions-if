@@ -16,7 +16,7 @@ jobs:
       - id: foo
         run: |
           if [ -e 'hello.txt' ]; then
-            echo "::set-output name=exists::true"
+            echo "exists=true" >> $GITHUB_OUTPUT
           fi
         if: failure()
 
